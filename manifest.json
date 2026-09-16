@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "交作业",
+  "version": "2.0.0",
+  "description": "自动填写课程作业回收页中的学号、姓名和 Git 仓库地址。",
+  "icons": {
+    "16": "assets/icon.png",
+    "32": "assets/icon.png",
+    "48": "assets/icon.png",
+    "128": "assets/icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://mn4wszvkpp.coze.site/*"
+  ],
+  "action": {
+    "default_title": "交作业",
+    "default_popup": "popup.html",
+    "default_icon": "assets/icon.png"
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mn4wszvkpp.coze.site/*"
+      ],
+      "js": [
+        "src/shared.js",
+        "src/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  }
+}

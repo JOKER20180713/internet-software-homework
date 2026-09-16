@@ -1,0 +1,14 @@
+{
+  "name": "homework-autofill-extension",
+  "version": "2.0.0",
+  "private": true,
+  "description": "课程作业回收页自动填写 Chrome 扩展",
+  "scripts": {
+    "test": "node tests/shared.test.cjs",
+    "check": "node scripts/check-extension.mjs && node tests/shared.test.cjs",
+    "submit": "node scripts/publish-and-submit.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

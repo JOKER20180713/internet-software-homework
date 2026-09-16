@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>交作业</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <img src="assets/icon.png" alt="" />
+        <span>交作业</span>
+      </div>
+      <button class="icon-button" id="settingsButton" type="button" aria-label="打开设置">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" />
+          <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.03 1.56V21h-4v-.08A1.7 1.7 0 0 0 8.95 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.56-1.03H3v-4h.08A1.7 1.7 0 0 0 4.6 8.95a1.7 1.7 0 0 0-.34-1.88L4.2 7l2.83-2.83.06.06a1.7 1.7 0 0 0 1.88.34A1.7 1.7 0 0 0 10 3.03V3h4v.08a1.7 1.7 0 0 0 1.03 1.56 1.7 1.7 0 0 0 1.88-.34l.06-.06L19.8 7l-.06.06a1.7 1.7 0 0 0-.34 1.88A1.7 1.7 0 0 0 20.96 10H21v4h-.08A1.7 1.7 0 0 0 19.4 15Z" />
+        </svg>
+      </button>
+    </header>
+
+    <main>
+      <section class="status-block" aria-live="polite">
+        <div class="status-icon" id="statusIcon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 12 3.2 3.2L17.5 8" /></svg>
+        </div>
+        <div>
+          <h1 id="statusTitle">正在检查当前页面</h1>
+          <p id="statusDescription">请稍候…</p>
+        </div>
+      </section>
+
+      <div class="progress" aria-hidden="true">
+        <span class="progress-dot is-complete"></span>
+        <span class="progress-line"></span>
+        <span class="progress-dot" id="finishDot"></span>
+      </div>
+
+      <section class="repo-section">
+        <label for="repoInput">仓库地址</label>
+        <div class="repo-input-wrap">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2.7a9.3 9.3 0 0 0-2.94 18.13c.46.08.63-.2.63-.45v-1.8c-2.57.56-3.11-1.09-3.11-1.09-.42-1.07-1.03-1.36-1.03-1.36-.84-.58.07-.57.07-.57.93.07 1.42.96 1.42.96.83 1.42 2.17 1.01 2.7.77.08-.6.32-1.01.59-1.25-2.05-.23-4.21-1.03-4.21-4.59 0-1.01.36-1.84.95-2.49-.1-.23-.41-1.18.09-2.46 0 0 .78-.25 2.55.95A8.83 8.83 0 0 1 12 7.11c.79 0 1.57.1 2.31.31 1.77-1.2 2.54-.95 2.54-.95.51 1.28.19 2.23.1 2.46.59.65.95 1.48.95 2.49 0 3.57-2.17 4.35-4.23 4.58.33.29.63.85.63 1.72v2.66c0 .25.17.54.64.45A9.3 9.3 0 0 0 12 2.7Z" />
+          </svg>
+          <input id="repoInput" type="url" autocomplete="off" placeholder="https://github.com/你/作业仓库" />
+        </div>
+        <p class="field-hint" id="repoHint">也可以先打开 GitHub / Gitee 仓库页自动识别</p>
+      </section>
+
+      <section class="switch-list" aria-label="自动化选项">
+        <label class="switch-row">
+          <span><strong>自动填写</strong><small>进入回收页时自动填写，已固定开启</small></span>
+          <input id="autoFill" type="checkbox" role="switch" checked disabled />
+          <i aria-hidden="true"></i>
+        </label>
+        <label class="switch-row">
+          <span><strong>自动提交</strong><small>填写 Git 地址后立即提交，已固定开启</small></span>
+          <input id="autoSubmit" type="checkbox" role="switch" checked disabled />
+          <i aria-hidden="true"></i>
+        </label>
+      </section>
+
+      <div class="actions">
+        <button class="primary-button" id="primaryButton" type="button">自动提交作业</button>
+      </div>
+      <p class="toast" id="toast" role="status" aria-live="polite"></p>
+    </main>
+
+    <footer>
+      <button id="footerSettings" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" /><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06a1.7 1.7 0 0 0-1.88-.34A1.7 1.7 0 0 0 14 20.93V21h-4v-.08A1.7 1.7 0 0 0 8.95 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.56-1.03H3v-4h.08A1.7 1.7 0 0 0 4.6 8.95a1.7 1.7 0 0 0-.34-1.88L4.2 7l2.83-2.83.06.06a1.7 1.7 0 0 0 1.88.34A1.7 1.7 0 0 0 10 3.03V3h4v.08a1.7 1.7 0 0 0 1.03 1.56 1.7 1.7 0 0 0 1.88-.34l.06-.06L19.8 7l-.06.06a1.7 1.7 0 0 0-.34 1.88A1.7 1.7 0 0 0 20.96 10H21v4h-.08A1.7 1.7 0 0 0 19.4 15Z" /></svg>
+        设置
+      </button>
+    </footer>
+
+    <script src="src/shared.js"></script>
+    <script src="src/popup.js"></script>
+  </body>
+</html>
