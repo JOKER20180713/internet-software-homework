@@ -40,14 +40,14 @@ npm run submit
 node scripts/publish-and-submit.mjs --yes
 ```
 
-如果仓库没有 `origin`，脚本也可通过已经登录的 GitHub CLI 自动创建私有仓库：
+如果仓库没有 `origin`，脚本也可通过已经登录的 GitHub CLI 自动创建公开仓库：
 
 ```bash
 gh auth login
-node scripts/publish-and-submit.mjs --repo 仓库名 --private
+node scripts/publish-and-submit.mjs --repo 仓库名 --public
 ```
 
-默认创建私有仓库。课程教师如需访问，必须将其 GitHub 账号添加为只读协作者；只有明确接受公开风险时才使用 `--public`。当前机器未安装 `gh` 时，请先在网站创建空仓库，再使用 `--remote` 方式。
+默认创建公开仓库，方便课程系统和教师访问；姓名与学号只存在浏览器本地存储，不会随代码上传。需要私有仓库时可显式使用 `--private`。当前机器未安装 `gh` 时，请先在网站创建空仓库，再使用 `--remote` 方式。
 
 仍然可以从 GitHub / Gitee / GitLab / Bitbucket 仓库页面点击扩展，手动输入或自动识别仓库地址后提交。
 

@@ -13,7 +13,7 @@ function parseArgs(argv) {
   const options = {
     remote: "",
     repoName: "",
-    visibility: "private",
+    visibility: "public",
     message: "提交作业",
     yes: false,
     dryRun: false,
@@ -44,8 +44,8 @@ function printHelp() {
 选项：
   --remote <url>       首次使用时绑定一个已经创建好的远程仓库
   --repo <name>        没有 origin 时，由 GitHub CLI 创建的仓库名
-  --private            创建私有仓库（默认，避免意外公开个人信息）
-  --public             明确创建公开仓库
+  --public             创建公开仓库（默认；身份信息不会进入仓库）
+  --private            明确创建私有仓库
   --message <text>     自动提交时使用的提交说明（默认：提交作业）
   --yes, -y            不询问，自动暂存并提交当前全部变更
   --allow-sensitive    明确允许提交 .env、密钥等敏感文件
