@@ -1,0 +1,32 @@
+test_anonymous_rejected (test_auth.AuthTests.test_anonymous_rejected) ... ok
+test_class_and_sources_are_server_scoped (test_auth.AuthTests.test_class_and_sources_are_server_scoped) ... ok
+test_cookie_is_not_bearer (test_auth.AuthTests.test_cookie_is_not_bearer) ... ok
+test_expired_wrong_audience_and_none_algorithm (test_auth.AuthTests.test_expired_wrong_audience_and_none_algorithm) ... ok
+test_login_and_signed_token (test_auth.AuthTests.test_login_and_signed_token) ... ok
+test_logout_revokes_replayed_token (test_auth.AuthTests.test_logout_revokes_replayed_token) ... ok
+test_student_cannot_upload_or_forge_role (test_auth.AuthTests.test_student_cannot_upload_or_forge_role) ... ok
+test_tampered_subject (test_auth.AuthTests.test_tampered_subject) ... ok
+test_teacher_upload_and_protected_download (test_auth.AuthTests.test_teacher_upload_and_protected_download) ... ok
+test_wrong_password (test_auth.AuthTests.test_wrong_password) ... ok
+test_changed_source_excluded (test_rag.RagTests.test_changed_source_excluded) ... ok
+test_dependency_failure_is_not_no_evidence (test_rag.RagTests.test_dependency_failure_is_not_no_evidence) ... ok
+test_empty_results_skip_chat (test_rag.RagTests.test_empty_results_skip_chat) ... ok
+test_generation_checks_citations (test_rag.RagTests.test_generation_checks_citations) ... ok
+test_invalid_requests_and_anonymous (test_rag.RagTests.test_invalid_requests_and_anonymous) ... ok
+test_keyword_independent_and_hybrid_rrf (test_rag.RagTests.test_keyword_independent_and_hybrid_rrf) ... ok
+test_scoped_search_ignores_client_class (test_rag.RagTests.test_scoped_search_ignores_client_class) ... ok
+test_unicode_chunks_cover_original (test_rag.RagTests.test_unicode_chunks_cover_original) ... ok
+test_upload_failure_retry_and_reindex_permissions (test_rag.RagTests.test_upload_failure_retry_and_reindex_permissions) ... ok
+test_calculator_rejects_code_and_unbounded_operations (test_platform.PlatformTests.test_calculator_rejects_code_and_unbounded_operations) ... ok
+test_chat_validates_payload (test_platform.PlatformTests.test_chat_validates_payload) ... ok
+test_empty_knowledge_skips_chat (test_platform.PlatformTests.test_empty_knowledge_skips_chat) ... ok
+test_mcp_only_two_finite_numbers (test_platform.PlatformTests.test_mcp_only_two_finite_numbers) ... ok
+test_skill_body_deferred_and_action_tools_deferred (test_platform.PlatformTests.test_skill_body_deferred_and_action_tools_deferred) ... ok
+test_templates_render_and_history_owner (test_platform.PlatformTests.test_templates_render_and_history_owner) ... ok
+test_trace_owner_and_no_header_capture (test_platform.PlatformTests.test_trace_owner_and_no_header_capture) ... ok
+test_uploaded_skill_validation_and_scope (test_platform.PlatformTests.test_uploaded_skill_validation_and_scope) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 16.244s
+
+OK

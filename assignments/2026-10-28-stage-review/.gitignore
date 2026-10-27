@@ -1,0 +1,8 @@
+data/
+.test-data/
+__pycache__/
+node_modules/
+.venv/
+.env
+*.log
+tmp/

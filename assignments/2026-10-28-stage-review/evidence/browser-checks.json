@@ -1,0 +1,22 @@
+{
+  "url": "http://127.0.0.1:8092/platform",
+  "title": "CampusClaw · AI 应用平台",
+  "browser": "Chrome via Playwright",
+  "routing": "Browser plugin not available",
+  "viewports": [
+    "1600x1100",
+    "390x844"
+  ],
+  "checks": {
+    "identity": true,
+    "non_blank": true,
+    "no_overlay": true,
+    "console_errors": [],
+    "template_saved_after_reload": true,
+    "real_ui_chat": true,
+    "skill_upload": true,
+    "history_trace_selection": true,
+    "mobile_no_horizontal_overflow": true,
+    "logout_clears_ui": true
+  }
+}
